@@ -37,30 +37,6 @@ d1=d1.drop(['altitude','availableBikes','availableDocks','city','landMark','last
 d1.to_csv(PathData+'StationINFO.csv')
 
 
-
-
-
-
-DistanceMatrix = distanceLatLon(lat1, long1, lat2, long2)
-one([5,5])
-
-
-
-
-for i in range(lend1):
-    for j in range(d1):
-        DistanceMatrix = distanceLatLon(d1.latitude[i], d1.longitude[i], d1.latitude[j], d1.longitude[j])
-
-
-
-
-
-
-
-
-
-
-
 #stationNames = d1['stationName']
 #stationIDs = d1['id'];
 #stationCapacities = d1['totalDocks']

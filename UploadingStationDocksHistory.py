@@ -10,6 +10,7 @@ import calendar
 import time
 import os
 import sys
+import MySQLdb
 
 PathData = "/home/m/Documents/Insight/bike/Data/"
 PathBike = "/home/m/Documents/Insight/bike/"
@@ -145,11 +146,95 @@ for i in range(42,len(d1),1):
     print('end '+CSVfile + ' ' + str(datetime.datetime.now()) + ' rows=' + str(length) )
 
 
+####################################################################################################################3
+
+# uploading the tables
+#for i in range(42,len(d1),1):
+for i in range(0,30,1):
+    station = d1['stationName'][i]
+    #TableName =  str(i) +'station'+str(stationID)
+    TableName =  'station'+str(stationID)
+    db = MySQLdb.connect("localhost","root","","CityBikes" )
+    db.query('DROP TABLE IF EXISTS '+ TableName)
+    db.query('DROP TABLE IF EXISTS '+ TableName)
+
+    length=0
+    for j in range(len(MonthsIni)):
+        #i = 0;j=0
+        stationID = d1['id'][i]
+        #CSVfile = PathData + 'Stations3/' + str(i)+'_'+station + '_part' + str(j)+ '.csv'
+        CSVfile = '/media/m/0E2B086F0E2B086F/Linux/Data/Station3/' + str(i)+'_'+station + '_part' + str(j)+ '.csv'
+        df0 = pd.read_csv(CSVfile, parse_dates=[1],names = ['station','time','AvailableBikes'])
+        print('start '+CSVfile + '' + str(datetime.datetime.now()))
+
+        #df0['AvailableBikes'] = df0['AvailableBikes'].fillna(method='ffill')
+        df0 = df0[ df0['AvailableBikes']>=0]
+        df0 = df0.drop('station', 1)
+
+        df0['minute'] = df0['time'].apply(lambda x: x.minute)
+        df0['hour'] = df0['time'].apply(lambda x: x.hour)
+        df0['day'] = df0['time'].apply(lambda x: x.day)
+        df0['month'] = df0['time'].apply(lambda x: x.month)
+
+        df0['ind'] = range(length,length+len(df0),1)
+        length = length + len(df0)
+
+        print('begin upload '+str(i)+' '+str(j))
+        df0.to_sql(con=db, name=TableName, if_exists='append', flavor='mysql', index=False)
+        print('end upload '+str(i)+' '+str(j))
+
+# creating indices,
+    db.query('Create index time on '+TableName+'(time)')
+    db.query('Create index month on '+TableName+'(month)')
+    db.query('Create index hour on '+TableName+'(hour)')
+    db.query('Create index day on '+TableName+'(day)')
+    db.query('Create index minute on '+TableName+'(minute)')
+    db.query('Create index ind on '+TableName+'(ind)')
+    print('end '+CSVfile + ' ' + str(datetime.datetime.now()) + ' rows=' + str(length) )
+
+
+####################################################################################################################3
+
+
+
+d1[['id','stationName']][0:79]
+d1[['id','stationName']]
+
+
 
 db = MySQLdb.connect("localhost","root","","CityBikes" )
-sql = 'select hour,avg(AvailableBikes) from CityBikes.'+TableName+ ' group by hour'
-
+sql = "SELECT TABLE_NAME FROM information_schema.TABLES WHERE TABLE_SCHEMA='CityBikes' and TABLE_NAME like '%station%'"
 df = pd.read_sql(sql, db)
+
+
+db = MySQLdb.connect("localhost","root","","CityBikes" )
+for i in range(1,71,1):
+    stationID1 = d1['id'][i-1]
+    stationID2 = d1['id'][i]
+    ss='RENAME TABLE '+str(i)+'station'+str(stationID1)+' to station'+str(stationID2)
+    print (ss)
+    db.query(ss)
+
+
+
+
+grouped = df.groupby(df['TABLE_NAME']).count()
+max(grouped.TABLE_NAME)
+
+grouped[:2]
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

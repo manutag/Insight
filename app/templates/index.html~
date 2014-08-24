@@ -66,11 +66,11 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="intro-message">
-                        <h1> <strong>  <font color = "black">PlanMyRide</font> </strong> </h1><br>
+                        <h1> <strong>  <font color = "black">PlanMyRide</font> </strong> </h1>
                         <hr class="intro-divider">
 			<h2><font color = "black">Choose where and when you'll be taking the citibike trip.</font></h2><br>
                         <hr class="intro-divider">
-			<h2><font color = "black">We'll give you the best nearby stations with available bikes and docks.</font></h2><br>
+			<h2><font color = "black">We'll show you stations with available bikes and docks.</font></h2><br>
 			<h2><font color = "black">We'll tell you the typical ride duration.</font></h2>
                         <hr class="intro-divider">
                         <ul class="list-inline intro-social-buttons">

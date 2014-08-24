@@ -1,0 +1,121 @@
+{% extends "layout/base.html" %}
+
+{% block head %}
+  <!-- Revealjs core CSS -->
+  <link href="{{ url_for('static', filename='vendor/components-revealjs/css/reveal.min.css') }}" rel="stylesheet">
+  <link href="{{ url_for('static', filename='vendor/components-revealjs/css/theme/default.css') }}" rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+
+<!--
+  <div class="reveal">
+
+  <div class="slides">
+    <section class="stack" data-id="ae311bdf29f0fd9a9eecf6dc778b5550">
+        <section class="" data-id="58f0d2716eb6c39e3dca6d8103d3a270" data-background-color="rgba( 255, 255, 255, 0.6 )" data-background-image="https://s3.amazonaws.com/media-p.slid.es/uploads/wsoofi/images/496046/Demo_Soofi.png" data-background-size="contain">
+            <h1>
+                <br>
+            </h1>
+<h1>
+            <img src="https://s3.amazonaws.com/media-p.slid.es/uploads/wsoofi/images/494028/pasted-from-clipboard.png">
+        </h1>
+    </section>
+    <section class="" data-id="38b3a21e0af763a7c8dfc1b919afeee8" data-background-color="rgba( 255, 255, 255, 0.6 )" data-background-image="https://s3.amazonaws.com/media-p.slid.es/uploads/wsoofi/images/496045/Demo_Soofi.png" data-background-size="contain">
+        <h2>
+<img src="https://s3.amazonaws.com/media-p.slid.es/uploads/wsoofi/images/494029/pasted-from-clipboard.png">
+        <br>
+</h2>
+    </section>
+    <section class="" data-id="7211c05879350795dd6f0b7b7d40701b" data-background-color="rgba( 255, 255, 255, 0.6 )" data-background-image="https://s3.amazonaws.com/media-p.slid.es/uploads/wsoofi/images/496044/Demo_Soofi.png" data-background-size="contain">
+        <h2>
+<img src="https://s3.amazonaws.com/media-p.slid.es/uploads/wsoofi/images/496057/pasted-from-clipboard.png">
+        <br>
+</h2>
+    </section>
+    <section class="" data-id="616407432312778ddcc13e4f14b43d53" data-background-color="rgba( 255, 255, 255, 0.6 )" data-background-image="https://s3.amazonaws.com/media-p.slid.es/uploads/wsoofi/images/496042/Demo_Soofi.png" data-background-size="contain">
+        <img src="https://s3.amazonaws.com/media-p.slid.es/uploads/wsoofi/images/496058/pasted-from-clipboard.png">
+    </section>
+    <section class="" data-id="106f98c7320d486b8e0c88ef07e270b7" data-background-image="https://s3.amazonaws.com/media-p.slid.es/uploads/wsoofi/images/498016/Demo_Soofi.png">
+        <h2>
+<img src="https://s3.amazonaws.com/media-p.slid.es/uploads/wsoofi/images/498017/pasted-from-clipboard.png">
+        <br>
+</h2>
+    </section>
+    <section class="" data-id="dca632f8f9a75013a83de45ded7a63a3" data-background-image="https://s3.amazonaws.com/media-p.slid.es/uploads/wsoofi/images/498019/Demo_Soofi.png">
+        <img src="https://s3.amazonaws.com/media-p.slid.es/uploads/wsoofi/images/498021/pasted-from-clipboard.png">
+        <img src="https://s3.amazonaws.com/media-p.slid.es/uploads/wsoofi/images/498022/pasted-from-clipboard.png" class="absolute-element" style="position: absolute; max-height: none; max-width: none; width: 512px; height: 147px; z-index: 4; left: 206px; top: 246px;">
+    </section>
+    <section class="" data-id="d3c56540b66ae70f7e72d64fc8d0831f" data-background-image="https://s3.amazonaws.com/media-p.slid.es/uploads/wsoofi/images/498023/Demo_Soofi.png">
+        <h2>
+<img src="https://s3.amazonaws.com/media-p.slid.es/uploads/wsoofi/images/498024/pasted-from-clipboard.png">
+        <br>
+</h2>
+    </section>
+    <section class="" data-id="399bac2d4215307d0e8b1110ba226fba" data-background-color="rgba( 255, 255, 255, 0.6 )" data-background-image="https://s3.amazonaws.com/media-p.slid.es/uploads/wsoofi/images/496040/Demo_Soofi.png" data-background-size="contain">
+        <h2>
+<img src="https://s3.amazonaws.com/media-p.slid.es/uploads/wsoofi/images/494033/pasted-from-clipboard.png">
+        <br>
+</h2>
+    </section>
+    <section class="" data-id="6969edc03b51fb54ecc41cd33899651f" data-background-color="rgba( 255, 255, 255, 0.6 )" data-background-image="https://s3.amazonaws.com/media-p.slid.es/uploads/wsoofi/images/496039/Demo_Soofi.png">
+        <img src="https://s3.amazonaws.com/media-p.slid.es/uploads/wsoofi/images/495948/pasted-from-clipboard.png">
+    </section>
+    <section class="" data-id="a34be3f2618556508fd768bfb3d60b3c" data-background-color="rgba( 255, 255, 255, 0.6 )" data-background-image="https://s3.amazonaws.com/media-p.slid.es/uploads/wsoofi/images/496036/Demo_Soofi.png" data-background-size="contain">
+        <h2>
+<img src="https://s3.amazonaws.com/media-p.slid.es/uploads/wsoofi/images/495973/pasted-from-clipboard.png">
+        <br>
+</h2>
+    </section>
+    <section class="" data-id="d5bcf4c848cb0b738e6529169d77e258" data-background-color="rgba( 255, 255, 255, 0.6 )" data-background-image="https://s3.amazonaws.com/media-p.slid.es/uploads/wsoofi/images/495987/Demo_Soofi.png" data-background-size="contain">
+        <h2 class="absolute-element" style="position: absolute; width: 657px; height: 472px; z-index: 4; left: 155px; top: 73px;">
+<img src="https://s3.amazonaws.com/media-p.slid.es/uploads/wsoofi/images/495975/pasted-from-clipboard.png">
+        <br>
+</h2>
+    </section>
+    <section class="" data-id="d72b307bd439c89f4dfed022235b9adf" data-background-image="https://s3.amazonaws.com/media-p.slid.es/uploads/wsoofi/images/496022/Demo_Soofi.png" data-background-size="contain">
+        <h2>
+<img src="https://s3.amazonaws.com/media-p.slid.es/uploads/wsoofi/images/496059/pasted-from-clipboard.png">
+        <br>
+</h2>
+    </section>
+    <section class="" data-id="c493439bc994dd0204210e78426198e9" data-background-image="https://s3.amazonaws.com/media-p.slid.es/uploads/wsoofi/images/496027/Demo_Soofi.png" data-background-size="contain">
+        <h2 class="absolute-element" style="position: absolute; width: 491px; height: 513px; z-index: 4; left: 208px; top: 29px;">
+<img src="https://s3.amazonaws.com/media-p.slid.es/uploads/wsoofi/images/498032/pasted-from-clipboard.png">
+        <br>
+</h2>
+    </section>
+    <section class="" data-id="2a546de34dce57160318be821a35fd88" data-background-image="https://s3.amazonaws.com/media-p.slid.es/uploads/wsoofi/images/496035/Demo_Soofi.png" data-background-size="contain">
+        <h2>
+<img src="https://s3.amazonaws.com/media-p.slid.es/uploads/wsoofi/images/496034/pasted-from-clipboard.png">
+        <br>
+</h2>
+    </section>
+    <section class="" data-id="0989ae01f46e1b0e1419d4890538b057" data-background-image="https://s3.amazonaws.com/media-p.slid.es/uploads/wsoofi/images/498041/Demo_Soofi.png">
+        <h2>
+<img src="https://s3.amazonaws.com/media-p.slid.es/uploads/wsoofi/images/498042/pasted-from-clipboard.png">
+        <br>
+</h2>
+    </section>
+</section>
+</div>
+
+  
+
+  </div>
+-->
+
+<center>
+<iframe src="https://docs.google.com/presentation/d/1VWfkoqbtY93DI6NVEusqfCOBNT243WKZqRJgW2bY3Pg/embed?start=false&loop=false&delayms=3000" frameborder="0"
+        width="769" height="600" allowfullscreen="true"
+        mozallowfullscreen="true" webkitallowfullscreen="true"
+        style="margin-top: 50px"></iframe>
+</center>
+{% endblock %}
+
+{% block scripts %}
+  <!-- Presentation Libraries -->
+  <script src="{{ url_for('static', filename='vendor/components-revealjs/lib/js/head.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='vendor/components-revealjs/js/reveal.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/reveal.js') }}"></script>
+{% endblock %}
