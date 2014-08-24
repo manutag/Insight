@@ -93,13 +93,13 @@
       <div id="user_inputs" >
 		<div class="input-group">
 <h4>START STATION #:</h4>
-		   <input  type="text" class="typeahead form-control col-md-4" id="startStation" placeholder="Start station #, e.g. 402" value="402"  />
+		   <input  type="text" class="typeahead form-control col-md-4" id="startStation" placeholder="Start station #, e.g. 444" value="444"  />
 	<br><br>
 <h4>END STATION #:</h4>	
-		  <input type="text" class="typeahead form-control col-md-4" id="endStation" placeholder="End station #, e.g. 492" value="492" />
+		  <input type="text" class="typeahead form-control col-md-4" id="endStation" placeholder="End station #, e.g. 545" value="545" />
 	<br><br>
 <h4>TIME:</h4>		
-		  <input type="text" class="typeahead form-control col-md-4" id="departuretime" placeholder="Enter Time e.g, 20:00" value="20:00" />
+		  <input type="text" class="typeahead form-control col-md-4" id="departuretime" placeholder="Enter Time e.g, 17:00" value="17:00" />
 		</div>
 		<br>
 	
@@ -189,12 +189,12 @@
                         var date = $("#BeginDatePicker").val()
                         var departuretime = $("#departuretime").val()
                         
-			console.log(startStation);
-			console.log(endStation);
-			console.log(month);
-			console.log(day);
-			console.log(hour);
-			console.log(minute);
+			//console.log(startStation);
+			//console.log(endStation);
+			//console.log(month);
+			//console.log(day);
+			//console.log(hour);
+			//console.log(minute);
 
 
 			//$.get("/ProcessingQuery", {startStation : startStation, endStation : endStation, month : month, day : day, hour : hour, minute : minute, date : date}, function(data) {
